@@ -27,12 +27,20 @@ public class Main {
         }
 
         double sum = 0;
+        int under16 = 0;
         for (int i = 0; i < people.length; i++) {
             sum += people[i].getHeight();
+
+            if (people[i].getAge() < 16) {
+                under16++;
+                System.out.println(people[i].getName());
+            }
         }
 
         double avgHeight = sum / people.length;
-        System.out.printf("Average height: %.2f", avgHeight);
+
+        System.out.printf("Average height: %.2f\n", avgHeight);
+        System.out.println("People under 16 years old: " + under16);
 
         scanner.close();
     }
